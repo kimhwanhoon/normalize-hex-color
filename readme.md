@@ -24,6 +24,7 @@ nc('#aBc') // returns '#ABCABC'
 // errors
 nc('') // throws error
 nc('G') // throws error
+nc('#') // throws error
 ```
 
 
