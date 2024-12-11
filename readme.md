@@ -26,6 +26,13 @@ nc('') // throws error
 nc('G') // throws error
 ```
 
+
+## Test
+
+```bash
+npm test
+```
+
 ## Features
 
 - Converts short hex colors to full 6-digit format
