@@ -15,11 +15,14 @@ import { normalizeHexColor as nc } from 'normalize-hex-color';
 // Basic usage
 nc('1') // returns '#111111'
 nc('12') // returns '#121212'
-nc('123') // returns '#123123'
+nc('1aC') // returns '#11AACC'
+nc('123a') // returns '#123A12'
+nc('123aB') // returns '#123AB1'
+nc('123456') // returns '#123456'
 // With hash prefix
 nc('#a') // returns '#AAAAAA'
 nc('#aB') // returns '#ABABAB'
-nc('#aBc') // returns '#ABCABC'
+nc('#aBc') // returns '#AABBCC'
 
 // errors
 nc('') // throws error

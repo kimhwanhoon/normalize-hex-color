@@ -1,6 +1,6 @@
 {
   "name": "normalize-hex-color",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Color code normalizer that transforms short hex colors into full 6-digit hex format. Perfect for CSS, design systems, and color manipulation",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

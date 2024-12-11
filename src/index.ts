@@ -17,19 +17,46 @@ const HEX_LENGTH = 6;
 
 const normalizeHexColor = (input: string): string => {
   if (typeof input !== 'string') {
-    throw new Error('Input must be a string');
+    throw new Error('input must be a string');
   }
 
-  if (!HEX_PATTERN.test(input)) {
-    throw new Error(
-      'Invalid hex color code. Must be 1-6 hex digits (0-9, a-f, A-F), with optional #'
-    );
-  }
-
+  // Remove '#' and convert to uppercase
   const hex = input.replace(/^#/, '').toUpperCase();
-  const normalizedHex = hex.repeat(HEX_LENGTH / hex.length);
-
-  return `#${normalizedHex}`;
+  
+  // Process based on input length
+  switch (hex.length) {
+    case 1:
+    case 2:
+      if (!HEX_PATTERN.test(input)) {
+        throw new Error('Invalid hex color code');
+      }
+      return `#${hex.repeat(HEX_LENGTH / hex.length)}`;
+    case 3:
+      // Convert 3-digit hex to 6-digit (e.g., 'ABC' -> 'AABBCC')
+      if (!HEX_PATTERN.test(input)) {
+        throw new Error('Invalid hex color code');
+      }
+      return `#${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+      
+      
+    case 4:
+      // Convert 4-digit hex to 6-digit (e.g., 'ABCD' -> 'ABCDAB')
+      return `#${hex[0]}${hex[1]}${hex[2]}${hex[3]}${hex[0]}${hex[1]}`;
+      
+    case 5:
+      // Convert 4-digit hex to 6-digit (e.g., 'ABCDE' -> 'ABCDEA')
+      return `#${hex[0]}${hex[1]}${hex[2]}${hex[3]}${hex[4]}${hex[0]}`;
+      
+    case 6:
+      // Normal 6-digit hex
+      if (!HEX_PATTERN.test(input)) {
+        throw new Error('Invalid hex color code');
+      }
+      return `#${hex}`;
+      
+    default:
+      throw new Error('Invalid hex color code length');
+  }
 };
 
 export { normalizeHexColor };
