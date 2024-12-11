@@ -1,0 +1,37 @@
+{
+  "name": "normalize-hex-color",
+  "version": "1.0.0",
+  "description": "Color code normalizer that transforms short hex colors into full 6-digit hex format. Perfect for CSS, design systems, and color manipulation",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimhwanhoon/normalize-hex-color.git"
+  },
+  "keywords": [
+    "css",
+    "color",
+    "hex",
+    "normalize",
+    "typescript"
+  ],
+  "author": "Hwanhoon Kim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kimhwanhoon/normalize-hex-color/issues"
+  },
+  "homepage": "https://github.com/kimhwanhoon/normalize-hex-color#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5"
+  }
+}
